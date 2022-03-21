@@ -2,16 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import checkerReducer from './features/checker';
+import themeReducer from './features/theme';
+import taskReducer from './features/tasks';
+import activePageReducer from './features/activePage';
+
+const store = configureStore({
+  reducer: {
+    checker: checkerReducer,
+    theme: themeReducer,
+    task: taskReducer,
+    activePage: activePageReducer
+  }
+});
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
