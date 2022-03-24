@@ -22,18 +22,18 @@ const Header = () => {
   }
 
   return (
-    <header className={`head ${theme && 'head__dark'}`}>
+    <header className={`head ${theme ? 'head__dark' : ''}`}>
         <div className="head__container">
             <article className="head__article">
                 <h1 className="head__title">TODO</h1>
                 { !theme ? <img onClick={() => dispatch(changeTheme(!theme))} className="head__theme" src="/images/icon-moon.svg" alt="moon" /> :
                 <img onClick={() => dispatch(changeTheme(!theme))} className="head__theme" src="/images/icon-sun.svg" alt="sun  " /> }
             </article>
-            <div className={ `head__input ${theme && 'head__input-dark'}` }>
-                <div onClick={() => dispatch(check(!checker)) && setDone(!done)} className={`head__check ${done && 'head__check-bg'}`}>
+            <div className={ `head__input ${theme ? 'head__input-dark' : ''}` }>
+                <div onClick={() => dispatch(check(!checker)) && setDone(!done)} className={`head__check ${done ? 'head__check-bg' : ''}`}>
                     { done && <img src="/images/icon-check.svg" alt="check" /> }
                 </div>
-                <input value={task} onKeyPress={(e) => e.key === "Enter" && addToTasks()} onChange={(e) => setTask(e.target.value)} className={`head__text ${theme && 'head__text-dark'}`} type="text" placeholder="Create a new todo..." />
+                <input value={task} onKeyPress={(e) => e.key === "Enter" && addToTasks()} onChange={(e) => setTask(e.target.value)} className={`head__text ${theme ? 'head__text-dark' : ''}`} type="text" placeholder="Create a new todo..." />
             </div>
         </div>
     </header>

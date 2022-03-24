@@ -14,11 +14,11 @@ const Navigation = () => {
         <div className={`task__foot task__width ${theme ? 'task-dark' : ''}`}>
             <span className="task__left">{ tasks.length < 1 ? '' : tasks.length } { tasks.length > 0 ? 'item/s left' : 'No items yet'}</span>
             <div className="task__navigate">
-                <button onClick={() => dispatch(changePage('all'))} className={`navigate__btn ${activePage ==='all' && 'task__active'}`}>All</button>
-                <button onClick={() => dispatch(changePage('active'))} className={`navigate__btn ${activePage ==='active' && 'task__active'}`}>Active</button>
-                <button onClick={() => dispatch(changePage('completed'))} className={`navigate__btn ${activePage ==='completed' && 'task__active'}`}>Completed</button>
+                <button onClick={() => dispatch(changePage('all'))} className={`${theme ? 'navigate__btn-dark' : 'navigate__btn'} ${activePage ==='all' ? 'task__active' : ''}`}>All</button>
+                <button onClick={() => dispatch(changePage('active'))} className={`${theme ? 'navigate__btn-dark' : 'navigate__btn'} ${activePage ==='active' ? 'task__active' : ''}`}>Active</button>
+                <button onClick={() => dispatch(changePage('completed'))} className={`${theme ? 'navigate__btn-dark' : 'navigate__btn'} ${activePage ==='completed' ? 'task__active' : ''}`}>Completed</button>
             </div>
-            <button onClick={() => dispatch(clearTask())} className="task__completed-btn">Clear Completed</button>
+            <button onClick={() => dispatch(clearTask())} className={theme ? 'task__completed-btn-dark' : 'task__completed-btn' }>Clear Completed</button>
         </div>
     </nav>
   )

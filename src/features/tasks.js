@@ -21,6 +21,7 @@ export const taskSlice = createSlice({
                if(task.id === action.payload.id){
                   task.done = action.payload.done
                }
+               return task
            })
            
         }

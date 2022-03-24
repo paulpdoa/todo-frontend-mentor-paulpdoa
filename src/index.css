@@ -85,7 +85,9 @@ body {
   align-items: center;
   border-radius:100px;
   cursor:pointer;
-  
+}
+.head__check:hover {
+  border:1px solid var(--Bright-Blue);
 }
 .head__check-bg {
   background:var(--Check-Background);
@@ -146,6 +148,9 @@ body {
   border-radius:100px;
   cursor:pointer;
 }
+.task__check:hover {
+  border:1px solid var(--Bright-Blue);
+}
 .task__check-bg {
   background:var(--Check-Background);
 }
@@ -173,6 +178,9 @@ body {
   align-items:center;
   gap:10%;
 }
+.check__text {
+  cursor:pointer;
+}
 .navigate__btn {
   background:none;
   color:var(--Dark-Grayish-Blue);
@@ -181,8 +189,25 @@ body {
   font-size:14px;
   cursor:pointer;
 }
+.navigate__btn-dark {
+  background:none;
+  color:var(--Dark-Grayish-Blue);
+  border:none;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+}
+.navigate__btn-dark:hover {
+  background:none;
+  color:var(--Light-Grayish-Blue);
+  border:none;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+  transition:0.2s ease-in-out;
+}
 .navigate__btn:hover {
-  color: var(--Bright-Blue);
+  color: var(--Very-Dark-Grayish-Blue);
   transition:0.3s ease-in-out;
 }
 .task__active {
@@ -195,6 +220,27 @@ body {
   font-size:14px;
   cursor:pointer;
   background:none;
+}
+.task__completed-btn-dark {
+  color:var(--Dark-Grayish-Blue);
+  border:none;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+  background:none;
+}
+.task__completed-btn-dark:hover {
+  color:var(--Light-Grayish-Blue-Hover);
+  border:none;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+  background:none;
+  transition:0.2s ease-in-out;
+}
+.task__completed-btn:hover {
+  color: var(--Very-Dark-Grayish-Blue);
+  transition:0.2s ease-in-out;
 }
 .task__cross {
   cursor:pointer;
@@ -230,4 +276,47 @@ body {
 }
 .task__completed-btn {
   color:var(--Dark-Grayish-Blue);
+}
+.task__navigate-mobile {
+  display:none;
+}
+
+@media screen and (max-width:600px) {
+  .head {
+    width:100%;
+  }
+  .head__title {
+    font-weight:600;
+    font-size:1.5em;
+  }
+  .task__container,.head__container {
+    width:80%;
+  }
+  .task__navigate {
+    display:none;
+  }
+  .task__width {
+    width:80%;
+  }
+  .task__list {
+    width:100%;
+  }
+  .task__list-container {
+    top:30%;
+  }
+  .task__navigate-mobile {
+    display:flex;
+    justify-content: center;
+    text-align:center;
+    margin-top:1em;
+  }
+  .navigate__mobile {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:1em;
+    width:80%;
+    border-radius:10px;
+    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.199);
+  }
 }
